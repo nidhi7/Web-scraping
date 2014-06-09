@@ -6,7 +6,7 @@ import hashlib
 
 def searchPic(term):
     img_list = getPic(term)
-    print "done..."     
+    print "DONE.."     
 
 def getPic (search):
     search = search.replace(" ","%20")
@@ -23,8 +23,6 @@ def getPic (search):
         htmltext = browser.open("http://www.google.com/search?q="+search+"&tbm=nws&start="+str(ind*10)).read()
         
         links = []
-        img_urls = []
-        formatted_images = []
         soup = BeautifulSoup(htmltext)
         results = soup.findAll('a')
         for r in results:
